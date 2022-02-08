@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="overflow-x:auto;"class="app-content">
+    {% for w in wan_tool %}
+    <a href="/data">Go Back</a><br/>
+    <h1 class="app-content-headerText" style="width:fit-content;">
+        {{ w.GSP }}</h1>
+    {% endfor %}
+    <div>
+        {% for w in wan_tool %}
+        <div class="products-row">
+            <div style="font-weight:bold;"class="product-cell price">GSP</div>
+            <div class="product-cell price">{{ w.GSP }}</div>
+        </div>
+        <div class="products-row">
+            <div style="font-weight:bold;" class="product-cell price">From Node</div>
+            <div class="product-cell price">{{ w.Node }}</div>
+        </div>
+        <div class="products-row">
+            <div style="font-weight:bold;" class="product-cell price">From Substation</div>
+            <div class="product-cell price">{{ w.Substation }}</div>
+        </div>
+        <div class="products-row">
+            <div style="font-weight:bold;" class="product-cell price">To Node</div>
+            <div class="product-cell price">{{ w.dest_node }}</div>
+        </div>
+        <div class="products-row">
+            <div style="font-weight:bold;" class="product-cell price">To Substation</div>
+            <div class="product-cell price">{{ w.dest_substation }}</div>
+        </div>
+        <div class="products-row">
+            <div style="font-weight:bold;" class="product-cell price">Line Name</div>
+            <div class="product-cell price">{{ w.line_name }}</div>
+        </div>
+        <div class="products-row">
+            <div style="font-weight:bold;" class="product-cell price">Operating Voltage</div>
+            <div class="product-cell price">{{ w.oper_vol }}</div>
+        </div>
+        <div class="products-row">
+            <div style="font-weight:bold;" class="product-cell price">Pos R</div>
+            <div class="product-cell price">{{ w.pos_R}}</div>
+        </div>
+        <div class="products-row">
+            <div style="font-weight:bold;" class="product-cell price">Pos X</div>
+            <div class="product-cell price">{{ w.pos_X }}</div>
+        </div>
+        <div class="products-row">
+            <div style="font-weight:bold;" class="product-cell price">Pos B</div>
+            <div class="product-cell price">{{ w.pos_B }}</div>
+        </div>
+        <div class="products-row">
+            <div style="font-weight:bold;" class="product-cell price">Summer Rating</div>
+            <div class="product-cell price">{{ w.Summer_Rating }}</div>
+        </div>
+        <div class="products-row">
+            <div style="font-weight:bold;" class="product-cell price">Winter Rating</div>
+            <div class="product-cell price">{{ w.Winter_Rating }}</div>
+        </div>
+        <div class="products-row">
+            <div style="font-weight:bold;" class="product-cell price">Circuit Length</div>
+            <div class="product-cell price">{{ w.cir_leng }}</div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
+

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="overflow-x:auto;"class="app-content">
+    <h1 class="app-content-headerText" style="width:fit-content;">WAN Tool Data</h1>
+    <div>
+        <table style="padding:10px;">
+            <thead>
+                <th class="col-name">S No.</th>
+                <th class="col-name">GSP</th>
+                <th class="col-name">From Node</th>
+                <th class="col-name">From Substation</th>
+                <th class="col-name"></th>
+            </thead>
+            <tbody>
+            {% for w in wan_tool %}
+                <tr>
+                    <td class="col-name">{{ w.id }}</td>
+                    <td class="col-code">{{ w.GSP }}</td>
+                    <td class="col-name">{{ w.Node }}</td>
+                    <td class="col-code">{{ w.Substation }}</td>
+                    <td class="col-code"><a style="btn btn-primary" href="/substation/{{ w.id }}">Know More</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}
+
