@@ -9,8 +9,8 @@
             <thead>
                 <th class="col-name">S No.</th>
                 <th class="col-name">GSP</th>
-                <th class="col-name">From Node</th>
-                <th class="col-name">From Substation</th>
+                <th class="col-name">Substation</th>
+                <th class="col-name">Season</th>
                 <th class="col-name"></th>
             </thead>
             <tbody>
@@ -18,8 +18,8 @@
                 <tr>
                     <td class="col-name">{{ forloop.counter }}</td>
                     <td class="col-code">{{ w.GSP }}</td>
-                    <td class="col-name">{{ w.Node }}</td>
-                    <td class="col-code">{{ w.Substation }}</td>
+                    <td class="col-name">{{ w.Substn }}</td>
+                    <td class="col-code">{{ w.Season }}</td>
                 </tr>
             {% endfor %}
             </tbody>

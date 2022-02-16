@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="overflow-x:auto;"class="app-content">
+    <h1 class="app-content-headerText" style="width:fit-content;">Inputs</h1>
+    <form action="/inputs/" method="POST" style="padding:1.5%;">
+        <label for="input">DNO Region</label>
+        <br/>
+        <br/>
+        <select id="region" name="region" class="form-select wsol-select-blue" aria-label="Default select example">
+            <option selected>Select DNO Region</option>
+            <option value="Eastern">EPN</option>
+            <option value="London">LPN</option>
+            <option value="Scotland">SPN</option>
+        </select>
+        <br/>
+        <label for="input">MW Range(0-100 MW)</label>
+        <br/>
+        <br/>
+        <input name="mw" type = "range" min="0" max="100" onchange="rangevalue.value=value"/>
+        <output id="rangevalue">50</output>
+        <label for="input">Import/Export/Both</label>
+        <br/>
+        <br/>
+        <select name="import_ex"class="form-select wsol-select-blue" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            <option value="Import">Import</option>
+            <option value="Export<">Export</option>
+            <option value="Both">Both</option>
+        </select>
+        <br/>
+        <label for="input">Desired development connection</label>
+        <br/>
+        <br/>
+        <select name="desired" class="form-select wsol-select-blue" aria-label="Default select example">
+            <option selected>Select Year</option>
+            {% for i in year %}
+            <option value="{{i}}">{{i}}</option>
+            {% endfor %}
+        </select>
+        <br/>
+        <label for="input">Backstop development connection date</label>
+        <br/>
+        <br/>
+        <select name="backstop" class="form-select wsol-select-blue" aria-label="Default select example">
+            <option selected>Select Year</option>
+            {% for i in year %}
+            <option value="{{i}}">{{i}}</option>
+            {% endfor %}
+        </select>
+        <br/>
+        <label for="input">Participate in Active Network Management</label>
+        <br/>
+        <br/>
+        <select name="network" class="form-select wsol-select-blue" aria-label="Default select example">
+            <option selected>Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No<">No</option>
+        </select>
+        <br/>
+        <label for="input">Show substations with fault level issues?</label>
+        <br/>
+        <br/>
+        <select name="substation" class="form-select wsol-select-blue" aria-label="Default select example">
+            <option selected>Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No<">No</option>
+        </select>
+        <br/>
+        <label for="input">Transmission</label>
+        <br/>
+        <br/>
+        <select id="transmission" name="transmission" class="form-select wsol-select-blue" aria-label="Default select example">
+            <option selected>Select</option>
+        </select>
+        <br/>
+        <label for="input">Distribution</label>
+        <br/>
+        <br/>
+        <select id="distribution" name="distribution" class="form-select wsol-select-blue" aria-label="Default select example">
+            <option selected>Select</option>
+        </select>
+        <br/>
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
